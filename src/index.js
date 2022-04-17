@@ -96,4 +96,22 @@ console.log(cycledSymbols); // вернет 2;
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbolsWithIndexOf = (string, symbol) => {};
+
+export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
+console.log(string)
+let strLowerCase = string.toLowerCase()
+let pos = 0
+let sum = 0
+
+while (true) {
+    let foundPos = strLowerCase.indexOf(symbol, pos);
+    if (foundPos === -1) break;
+    pos = foundPos + 1;
+    sum += 1
+}
+return sum
+}
+
+const cycledSymbolsIndexOf = quantityOfSymbolsWithIndexOf('Test', 't');
+
+console.log(cycledSymbolsIndexOf); 
