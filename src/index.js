@@ -24,7 +24,16 @@ console.log(replacedString);
  * @param {string} newWord
  * @returns {string}
  */
-export const changeWord = (string, word, newWord) => {};
+
+export const changeWord = (string, word, newWord) => {
+    let strNew = string.replace(word, newWord)
+    return strNew
+};
+const changedString = changeWord('my name bohdan and I', 'bohdan', 'vlad'); // Должно вернуть 'my name vlad and I'
+// Работаем по первому совпадению, на второе нам все равно. Если совпадений нет, возвращаем оригинальную строку с первого аргумента
+
+console.log(changedString);
+
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
@@ -32,8 +41,16 @@ export const changeWord = (string, word, newWord) => {};
  * @param {number} length
  * @returns {string}
  */
-export const truncate = (string, length) => {};
 
+export const truncate = (string, length) => {
+    let strNew = string.slice(0, length)
+    return strNew
+
+};
+
+const truncatedString = truncate('test strubg ', 3); // Должно вернуть 'tes'
+
+console.log(truncatedString);
 /**
  * Принимает строку в первом аргументе, и символ во втором
  * И должно вернуть количество этих символов в этой строке
@@ -45,7 +62,24 @@ export const truncate = (string, length) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbols = (string, symbol) => {};
+export const quantityOfSymbols = (string, symbol) => {
+
+    console.log(string)
+    let strLowerCase = string.toLowerCase()
+    console.log(strLowerCase)
+    let sum = 0
+    for (let i = 0; i < strLowerCase.length; i += 1) {
+        if (strLowerCase[i] === symbol) {
+            sum += 1
+        }
+    }
+    console.log(sum)
+    return sum
+};
+
+const cycledSymbols = quantityOfSymbols('Test', 't');
+
+console.log(cycledSymbols); // вернет 2;
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
