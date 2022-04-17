@@ -4,7 +4,15 @@
  * @param {string} string
  * @returns {string}
  */
-export const replaceZAndVFromString = (string) => {};
+export const replaceZAndVFromString = (string) => {
+
+    let strReplace = string.replaceAll('z', '*').replaceAll('v', '*')
+    return strReplace
+};
+
+const replacedString = replaceZAndVFromString('strt z and v');
+
+console.log(replacedString);
 
 /**
  * Функция должна принять 3 аргумента и все строки. Мы передаем строку,
